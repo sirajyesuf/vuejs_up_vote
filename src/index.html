@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/app.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+<div id="app"> 
+    <div class="container py-5">
+        <h4 class="text-success text-center">up vote</h4>
+        <hr>
+        <div class="col">
+            <div class="row" >
+
+                <div class="media" v-for="sub in sortedSubmissions" :key="sub.id">
+                    <img :src="sub.avatar" class="mr-3" alt="...">
+                    <div class="media-body">
+                      <h6 class=" text-success mt-0"  :class = "{'xxx':sub.votes>20}">{{sub.title}}</h6>
+                      {{sub.description}}
+                      <span @click="upvote(sub.id)">
+                          {{sub.votes}}   ^
+                      </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+<script src="../public/js/vue.js"></script>
+<script src="../src/app.js"></script>
+</body>
+</html>
